@@ -41,7 +41,7 @@ EXPOSE 3306
 # safe in the future. This should *never* change, the last test is there
 # to make sure of that.
 RUN INSTALL_PKGS="policycoreutils rsync tar xz gettext hostname bind-utils groff-base ${NAME}-server" && \
-    dnf install -y --setopt=tsflags=nodocs ${INSTALL_PKGS} && \
+    dnf install -y --setopt=tsflags=nodocs --setopt=install_weak_deps=False ${INSTALL_PKGS} && \
     rpm -V ${INSTALL_PKGS} && \
     /usr/libexec/mysqld -V | grep -qe "${MYSQL_VERSION}\." && echo "Found VERSION ${MYSQL_VERSION}" && \
     dnf -y clean all --enablerepo='*' && \
