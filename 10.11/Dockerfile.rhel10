@@ -26,7 +26,7 @@ MariaDB databases on behalf of the clients."
 LABEL summary="${SUMMARY}" \
       description="${DESCRIPTION}" \
       io.k8s.description="${DESCRIPTION}" \
-      io.k8s.display-name="MariaDB ${VERSION}" \
+      io.k8s.display-name="MariaDB ${MYSQL_VERSION}" \
       io.openshift.expose-services="3306:mysql" \
       io.openshift.tags="database,mysql,${NAME},${NAME}${MYSQL_SHORT_VERSION},${NAME}-${MYSQL_SHORT_VERSION}" \
       com.redhat.component="${NAME}-${MYSQL_SHORT_VERSION}-container" \
